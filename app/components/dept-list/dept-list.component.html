@@ -1,0 +1,59 @@
+<div class="container"></div>
+<table class="table">
+    <tr>
+
+        <th>Department No</th>
+        <th>Department Name</th>
+        <th>Location</th>
+    </tr>
+
+    <tr *ngFor="let department of departments">
+        <td>{{department.deptno}}</td>
+        <td>{{department.dname}}</td>
+        <td>{{department.location}}</td>
+    </tr>
+
+</table>
+
+<hr> 
+
+<form #departmentForm="ngForm" (ngSubmit)="onSubmit(departmentForm)"> 
+     &nbsp;
+    <div class="row">
+    <h1>  <div class="col-sm-3"><label>Department Form</label></div> </h1>
+        
+    </div>
+
+    &nbsp;
+         
+    <div class="row">
+        <div class="col-sm-3"><label>Department no</label></div> 
+        <div class="col-sm-6"><input type="text" name="deptno" [(ngModel)]="formModel.deptno"/></div>
+    </div>
+    &nbsp;
+         
+    <div class="row">
+        <div class="col-sm-3"><label>Department name</label></div> 
+     <div class="col-sm-6"><input type="text" name="dname" [(ngModel)]="formModel.dname"/></div>
+    </div>
+
+    &nbsp;
+         
+    <div class="row">
+        <div class="col-sm-3"><label>Location</label></div>
+        <div class="col-sm-6"><input type="text" name="location" [(ngModel)]="formModel.location"/></div>
+    </div>
+
+    <br>
+    <br>
+    <div class="row">
+        
+        <div class="col-sm-3" style="color:black">
+            <input style="background-color:greenyellow;height:50px;width:80px" type="submit" name="submit" value="submit" class="btn btn-primary"/></div>
+    </div>
+    &nbsp;
+    </form>   
+
+
+
+

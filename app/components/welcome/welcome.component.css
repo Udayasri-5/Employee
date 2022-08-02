@@ -1,0 +1,24 @@
+button{
+    size : 70mm;
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    text-align: center;
+    margin-left : 30%;
+    margin-top:5%;
+}
+
+h1{
+    text-align: center;
+    color:orange;
+}
+body{
+    border : 5px;
+    border-width: 100mm;
+    border-color: black;
+    border-style: solid;
+}

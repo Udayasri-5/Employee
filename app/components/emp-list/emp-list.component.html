@@ -1,0 +1,56 @@
+     
+<div class="container"></div>
+
+&nbsp; 
+    <form #serachform="ngForm" (ngSubmit)="getEmployeeByName()">
+        <input class="form-control" type="search" name="searchByName" [(ngModel)] ="searchByName">
+        <input type="submit" name="submit" value="Search" class="btn btn-info">
+    </form>  
+
+<table class="table table-bordered table-info table-striped   table-hover">
+  
+
+    <tr>
+
+        <th>Employee ID</th>
+        <th> Employee name</th>
+        <th>Job</th>
+        <th>Hiredate</th>
+        <th>Manager ID</th>
+        <th>Salary</th>
+        <th>Commission</th>
+        <th>Dept no</th>
+    </tr>
+
+    <tr *ngFor="let employee of employees" [ngClass]="{'metaQuote':employee.salary>=20000,
+    'nonMetaQuote':employee.salary<20000}">
+    <td>{{employee.empNo}}</td>
+    <td>{{employee.empName}}</td>
+    <td>{{employee.job}}</td>
+    <td>{{employee.hireDate}}</td>
+    <td>{{employee.managerID}}</td>
+    <td>{{employee.salary | currency:'INR'}}</td>
+    <td>{{employee.commision | currency:'INR'}}</td>
+    <td>{{employee.deptNo}}</td>
+
+    <td> 
+        <button type="submit" class="btn btn-info" (click)="updateEmp(employee.empNo)"> Update </button>
+    </td>
+    <td> 
+        <button type="submit" class="btn btn-info" (click)="deleteEmp(employee.empNo)"> Delete </button>
+    </td>
+
+     </tr>
+</table> 
+
+
+&nbsp;
+<button class="btn btn-info" (click)="backtoHome()"> Back to Home</button>
+
+
+
+
+
+
+
+
